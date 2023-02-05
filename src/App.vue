@@ -9,6 +9,7 @@
     text: 'page',
 		href: 'page.html',
     num: [5,1,3],
+    obj: {x: 5, y: 1, z: 3},
 		}
 	}
 }
@@ -21,5 +22,6 @@
     <p> I don't undestand this :(</p>
     <p><a href={{href}}>{{text}}</a></p>
     <p>{{ num[0]+num[1]+num[2]}}</p>
+    <p>{{ obj.x + obj.y + obj.z }}</p>
   </div>
 </template>
