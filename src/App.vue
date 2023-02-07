@@ -5,24 +5,28 @@
 		return {
 		name: 'Danil',
 		group: 'I-1-21',
+    num1: 3,
+    num2: 5,
     image: 'welcome.png',
     text: 'page',
 		href: 'page.html',
     num: [5,1,3],
     obj: {x: 5, y: 1, z: 3},
     timebutton: 'Нажмите чтобы узнать время',
+    text: 'str',
 		}
 	},
   methods: {
-		showdata: function() {
-		  alert(new Date());
-	  }
+		show: function() {
+      alert(num1 + num2);
+	}
   }
 }
 </script>
 
 <template>
   <div>
+    
     <img v-bind:src="image">
     <h1> Hi, my name is {{name}} this is my Vue page {{group}} </h1>
     <p> I don't undestand this :(</p>
