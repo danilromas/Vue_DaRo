@@ -13,19 +13,23 @@
     obj: {x: 5, y: 1, z: 3},
     timebutton: 'Нажмите чтобы узнать время',
     text: 'xxx',
+		surn: 'Smit',
+    cost: 100,
+    amount: 10,
 		}
 	},
   methods: {
 	show: function(str) {
 		alert(str ** 2);
 	  },
-  change: function() {
-		this.text = 'yyy';
-   
-    },
-    change2: function() {
-		this.text1 = 'Меняется';
-    }
+  computed: {
+	  full: function() {
+        this.amount * this.cost;
+	    }
+    }, 
+  change: function(){
+    this.cost += 100; 
+  }
   }
 }
 </script>
@@ -39,13 +43,9 @@
     <p>{{ num[0]+num[1]+num[2]}}</p>
     <p>{{ obj.x + obj.y + obj.z }}</p>
     <button v-on:click="showdata()">{{timebutton}}</button>
-	  <button @click="show(2)">квадрат 2</button>
-	  <button @click="show(3)">квадрат 3</button>
-	    {{ text }}
-	  <button @click="change">text</button>
-
-    {{ text1 }}
-	  <button @click="change2">text1</button>
+    <p>Цена на данный момент {{ cost }}</p>
+    <p>{{ amount * cost }}</p>
+	  <button @click = "change"> повысить цену </button>
   </div>
 </template>
   
