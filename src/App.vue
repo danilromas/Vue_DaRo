@@ -46,6 +46,7 @@
     <p>Цена на данный момент {{ cost }}</p>
     <p>{{ amount * cost }}</p>
 	  <button @click = "change"> повысить цену </button>
+    <button><a @click.prevent href="http://github.com/danilromas/">GitHub</a></button>
   </div>
 </template>
   
