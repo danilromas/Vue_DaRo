@@ -16,8 +16,8 @@
 		surn: 'Smit',
     cost: 100,
     amount: 10,
-    visible_on: true,
-    visible_off: false,
+    visible: true,
+    hidden: false,
 		}
 	},
   methods: {
@@ -49,8 +49,10 @@
     <p>{{ amount * cost }}</p>
 	  <button @click = "change"> повысить цену </button>
     <button><a @click.prevent href="http://github.com/danilromas/">GitHub</a></button>
-    <p v-if="visible_on">Текст видим пока я не пропишу false</p>
-    <p v-if="visible_off">Текст видим пока я не пропишу false</p>
+    <p v-if="visible">Текст видим пока я не пропишу false</p>
+    <p v-if="!visible">Текст видим пока я не пропишу false</p>
+    <p v-if="hidden">Текст видим пока я не пропишу false</p>
+    <p v-if="!hidden">Текст видим пока я не пропишу false</p>
   </div>
 </template>
   
