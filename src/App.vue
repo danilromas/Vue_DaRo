@@ -25,6 +25,7 @@
     day_n: 4,
     age: 25,
     isAuth: true,
+    items: [1, 2, 3, -4, 5],
     products: [
 			{
 				name: 'Гречка',
@@ -96,8 +97,10 @@
             </tr>
         </table>
     </div>
-    <p v-for="num in 30">
-		{{ num }}
+    <p v-for="num in items">
+      <p v-if = "num> 0">
+		    {{ num }}
+	    </p>
 	</p>
 </template>
   
