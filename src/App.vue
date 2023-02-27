@@ -25,10 +25,22 @@
     day_n: 4,
     age: 25,
     isAuth: true,
-    items: [1, 2, 3, 4, 5],
-    arr: ['x', 'y', 'z'],
-    obj: {user1: '500$', user2: '2100$', user3: '3300$'},
-    items: [1, 2, 3],
+    products: [
+			{
+				name: 'Гречка',
+				price: 100,
+				quantity: 5
+			},
+			{
+				name: 'Кофе',
+				price: 200,
+				quantity: 4
+			},
+			{
+				name: 'Сахар',
+				price: 300,
+				quantity: 3
+			},]
 		}
 	},
   methods: 
@@ -74,6 +86,15 @@
         {{ elem }}
         </li>
         <li class="divider">divider</li>
+    </div>
+    <div>
+        <table>
+            <tr v-for="things in products">
+                <td> {{ things.name }} </td>
+                <td> - {{ things.price }} </td>
+                <td> - {{ things.quantity }} </td>
+            </tr>
+        </table>
     </div>
 </template>
   
