@@ -25,6 +25,10 @@
     day_n: 4,
     age: 25,
     arr: ['1', '2', '3'],
+    obj: {
+			red_color: true,
+			font_big_size:  true,
+		},
     methods: 
     {
         add: function() {
@@ -55,6 +59,7 @@
 
 <template>  
     <p class="cssClasses"> cssClasses </p>
+    <p :class="obj">vue</p>
   
 </template>
 
