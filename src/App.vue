@@ -21,53 +21,24 @@
     visible1: false,
 		visible2: false,
     visible3: false,
+    Admin: true,
 		}
 	},
   methods: 
     {
-        hide: function() {
-		this.visible = false;
-	    },
-        show: function() {
-		this.visible = true;
-	    },
-        reversal: function() {
-		this.visible = !this.visible;
-        },
-    computed: {
-      toggle1: function() {
-	    this.visible1 = !this.visible1;
-    },
-        toggle2: function() {
-	    this.visible2 = !this.visible2;
-    },
-        toggle3: function() {
-	    this.visible3 = !this.visible3;
+      func: function() {
+        this.Admin = !this.Admin;
     },  
-    computed: 
-    {
-    }
+    computed:
+    { }
     }
   }
-}
 </script>
 
 <template>
-  <p v-if="visible">текст</p>
-    <br>
-    <button @click="hide">скрыть</button>
-    <button @click="show">показать</button>
-    <button @click="reversal">скрыть/показать</button>
-    <button @click="reversal">скрыть/показать</button>
-    <button @click="toggle1"> {{ visible1 ? 'hide' : 'show' }} </button>
-    <p v-if="visible1">text</p>
-    <br>
+ <p v-if="Admin">+++</p>
+    <p v-else>---</p>
 
-	<button @click="toggle2"> {{ visible2 ? 'hide' : 'show' }} </button>
-    <p v-if="visible2">text</p>
-    <br>
-
-	<button @click="toggle3"> {{ visible3 ? 'hide' : 'show' }} </button>
-    <p v-if="visible3">text</p>
+	<button @click="func"> {{ Admin ? 'спрячь' : 'покажи' }} </button>
 </template>
   
