@@ -22,6 +22,7 @@
 		visible2: false,
     visible3: false,
     Admin: true,
+    day_n: 4,
 		}
 	},
   methods: 
@@ -40,5 +41,13 @@
     <p v-else>---</p>
 
 	<button @click="func"> {{ Admin ? 'спрячь' : 'покажи' }} </button>
+
+  <p v-if="day_n === 1">Понедельник</p>
+	<p v-if="day_n === 2">Вторник</p>
+	<p v-if="day_n === 3">Среда</p>
+	<p v-if="day_n === 4">Четверг</p>
+	<p v-if="day_n === 5">Пятница</p>
+	<p v-if="day_n === 6">Суббота</p>
+	<p v-if="day_n === 7">Воскресенье</p>
 </template>
   
