@@ -26,6 +26,7 @@
     age: 25,
     isAuth: true,
     items: [1, 2, 3, 4, 5],
+    arr: ['x', 'y', 'z'],
 		}
 	},
   methods: 
@@ -69,5 +70,9 @@
   <ul>
 	  <li v-for="elem in items">{{ elem**2 }}</li>
   </ul>
+  <ul>
+	<li v-for="(elem, key) in arr">
+		 {{ key }} {{ elem }}</li>
+    </ul>
 </template>
   
