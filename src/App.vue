@@ -28,6 +28,7 @@
     obj: {
 			red_color: true,
 			font_big_size:  true,
+      hidden: false,
 		},
     methods: 
     {
@@ -59,7 +60,10 @@
 
 <template>  
     <p class="cssClasses"> cssClasses </p>
-    <p :class="obj">vue</p>
+    <div class="withMargin"> 
+        <button @click="hide"> {{ obj.hidden ? 'Показать' : 'Скрыть' }} </button>
+        <p :class="obj">Текст.</p>
+    </div>
   
 </template>
 
@@ -68,6 +72,12 @@
   font-size: 30px;
   margin-left: 5%;
 
+}
+p.hidden {
+	display: none;
+}
+.withMargin {
+    margin-left: 20px;
 }
 </style>
 
