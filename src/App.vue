@@ -24,74 +24,53 @@
     Admin: true,
     day_n: 4,
     age: 25,
-    isAuth: true,
-    items: [1, 2, 3, -4, 5],
-    products: [
-			{
-				id: 1,
-				name: 'Гречка',
-			},
-			{
-				id: 2,
-				name: 'Кофе',
-			},
-			{
-				id: 3,
-				name: 'Сахар',
-			},]
-		}
-	},
-  methods: 
+    arr: ['1', '2', '3'],
+    methods: 
     {
-      func: function() {
-        this.Admin = !this.Admin;
-    },  
-      delogin: function(){
-        this.isAuth = !this.isAuth
+        add: function() {
+		this.arr.push(this.arr.length); // добавить элемент
         },
-    computed:
-    { }
+        removeb: function(){
+        this.arr.shift(0) // убрать первый
+        },
+        removef: function(){
+        this.arr.splice(this.arr.length-1) //убрать последний
+        },
+        removel: function(){
+        this.arr.splice(this.arr.length-2, 1) //убрать предпоследний
+        },
+        sort1: function(){
+        this.arr.sort() //отсортировать
+        },
+        reverse1: function(){
+        this.arr.reverse() //отсортировать
+        },
+        computed: 
+    {    }
+      }
     }
   }
+}
 </script>
 
 <template>
- <p v-if="Admin">+++</p>
-    <p v-else>---</p>
+ <button @click="add">add</button>   
+    <br>
+    <button @click="removeb">убрать 1</button> 
+    <br>    
+    <button @click="removef">убрать last</button> 
+    <br>    
+    <button @click="removel">убрать last-1</button> 
+    <br>    
+    <button @click="sort1">sort</button> 
+    <br>    
+    <button @click="reverse1">перевернуть</button> 
+    <br>    
 
-	<button @click="func"> {{ Admin ? 'спрячь' : 'покажи' }} </button>
-
-  <p v-if="day_n === 1">Понедельник</p>
-	<p v-if="day_n === 2">Вторник</p>
-	<p v-if="day_n === 3">Среда</p>
-	<p v-if="day_n === 4">Четверг</p>
-	<p v-if="day_n === 5">Пятница</p>
-	<p v-if="day_n === 6">Суббота</p>
-	<p v-if="day_n === 7">Воскресенье</p>
-
-  <p v-if="age < 18">Несовершеннолетний</p>
-	<p v-else-if="age < 25">Молодой человек</p>
-	<p v-else>Старше</p>
-  
-  <button @click="delogin"> {{ isAuth ? 'скрой' : 'покаж' }}</button>
-	<div v-if="isAuth">
-		<p>+++</p>
-		<p>+++</p>
-		<p>+++</p>
-	</div>
-    <div>
-        <table>
-            <tr v-for="things in products">
-                <td> {{ things.name }} </td>
-                <td> - {{ things.price }} </td>
-                <td> - {{ things.quantity }} </td>
-            </tr>
-        </table>
-    </div>
     <ul>
-            <li v-for="things in products" :key="things.id">
-                {{ things.name }}
-            </li>
-        </ul>
+        <li v-for="elem in arr">
+            <p> {{ elem }}</p>
+        </li>
+    </ul>
 </template>
   
