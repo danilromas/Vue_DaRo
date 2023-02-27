@@ -20,39 +20,29 @@
     hidden: false,
 		}
 	},
-  methods: {
-	show: function(str) {
-		alert(str ** 2);
-	  },
-  computed: {
-	  full: function() {
-        this.amount * this.cost;
-	    }
-    }, 
-  change: function(){
-    this.cost += 100; 
-  }
+  methods: 
+    {
+        hide: function() {
+		this.visible = false;
+	    },
+        show: function() {
+		this.visible = true;
+	    },
+        reversal: function() {
+		this.visible = !this.visible;
+        },
+    computed: {
+    }
   }
 }
 </script>
 
 <template>
-  <div>
-    <img v-bind:src="image">
-    <h1> Hi, my name is {{name}} this is my Vue page {{group}} </h1>
-    <p> I don't undestand this :(</p>
-    <p><a href={{href}}>{{text}}</a></p>
-    <p>{{ num[0]+num[1]+num[2]}}</p>
-    <p>{{ obj.x + obj.y + obj.z }}</p>
-    <button v-on:click="showdata()">{{timebutton}}</button>
-    <p>Цена на данный момент {{ cost }}</p>
-    <p>{{ amount * cost }}</p>
-	  <button @click = "change"> повысить цену </button>
-    <button><a @click.prevent href="http://github.com/danilromas/">GitHub</a></button>
-    <p v-if="visible">Текст видим пока я не пропишу false</p>
-    <p v-if="!visible">Текст видим пока я не пропишу false</p>
-    <p v-if="hidden">Текст видим пока я не пропишу false</p>
-    <p v-if="!hidden">Текст видим пока я не пропишу false</p>
-  </div>
+  <p v-if="visible">текст</p>
+    <br>
+    <button @click="hide">скрыть</button>
+    <button @click="show">показать</button>
+    <button @click="reversal">скрыть/показать</button>
+    <button @click="reversal">скрыть/показать</button>
 </template>
   
