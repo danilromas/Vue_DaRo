@@ -24,6 +24,7 @@
     Admin: true,
     day_n: 4,
     age: 25,
+    isAuth: true, 
 		}
 	},
   methods: 
@@ -31,6 +32,9 @@
       func: function() {
         this.Admin = !this.Admin;
     },  
+      delogin: function(){
+        this.isAuth = !this.isAuth
+        },
     computed:
     { }
     }
@@ -54,5 +58,12 @@
   <p v-if="age < 18">Несовершеннолетний</p>
 	<p v-else-if="age < 25">Молодой человек</p>
 	<p v-else>Старше</p>
+  
+  <button @click="delogin"> {{ isAuth ? 'скрой' : 'покаж' }}</button>
+	<div v-if="isAuth">
+		<p>+++</p>
+		<p>+++</p>
+		<p>+++</p>
+	</div>
 </template>
   
