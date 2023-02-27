@@ -53,24 +53,17 @@
 }
 </script>
 
-<template>
- <button @click="add">add</button>   
-    <br>
-    <button @click="removeb">убрать 1</button> 
-    <br>    
-    <button @click="removef">убрать last</button> 
-    <br>    
-    <button @click="removel">убрать last-1</button> 
-    <br>    
-    <button @click="sort1">sort</button> 
-    <br>    
-    <button @click="reverse1">перевернуть</button> 
-    <br>    
-
-    <ul>
-        <li v-for="elem in arr">
-            <p> {{ elem }}</p>
-        </li>
-    </ul>
+<template>  
+    <p class="cssClasses"> cssClasses </p>
+  
 </template>
+
+<style>
+.cssClasses{
+  font-size: 30px;
+  margin-left: 5%;
+
+}
+</style>
+
   
