@@ -24,7 +24,8 @@
     Admin: true,
     day_n: 4,
     age: 25,
-    isAuth: true, 
+    isAuth: true,
+    items: [1, 2, 3, 4, 5],
 		}
 	},
   methods: 
@@ -64,8 +65,9 @@
 		<p>+++</p>
 		<p>+++</p>
 		<p>+++</p>
-    <p> v-if появляется только при результате true, а при false нет </p> 
-    <p> v-show изначально видимо</p>
 	</div>
+  <ul>
+	  <li v-for="elem in items">{{ elem**2 }}</li>
+  </ul>
 </template>
   
