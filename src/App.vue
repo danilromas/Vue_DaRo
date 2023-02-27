@@ -35,15 +35,15 @@
 		this.visible = !this.visible;
         },
     computed: {
-      toggle: function() {
+      toggle1: function() {
 	    this.visible1 = !this.visible1;
     },
-        toggle1: function() {
+        toggle2: function() {
 	    this.visible2 = !this.visible2;
     },
-        toggle2: function() {
+        toggle3: function() {
 	    this.visible3 = !this.visible3;
-    },
+    },  
     computed: 
     {
     }
@@ -59,13 +59,15 @@
     <button @click="show">показать</button>
     <button @click="reversal">скрыть/показать</button>
     <button @click="reversal">скрыть/показать</button>
-    <button @click="toggle1">1</button>
-	<p v-if="visible1">Текст Текст Текст</p>
-<br>
-    <button @click="toggle2">2</button>
-    <p v-if="visible2">Текст Текст Текст</p>
-<br>
-    <button @click="toggle3">3</button>
-    <p v-if="visible3">Текст Текст Текст</p>
+    <button @click="toggle1"> {{ visible1 ? 'hide' : 'show' }} </button>
+    <p v-if="visible1">text</p>
+    <br>
+
+	<button @click="toggle2"> {{ visible2 ? 'hide' : 'show' }} </button>
+    <p v-if="visible2">text</p>
+    <br>
+
+	<button @click="toggle3"> {{ visible3 ? 'hide' : 'show' }} </button>
+    <p v-if="visible3">text</p>
 </template>
   
