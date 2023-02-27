@@ -96,5 +96,8 @@
             </tr>
         </table>
     </div>
+    <p v-for="num in 30">
+		{{ num }}
+	</p>
 </template>
   
