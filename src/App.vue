@@ -23,6 +23,7 @@
     visible3: false,
     Admin: true,
     day_n: 4,
+    age: 25,
 		}
 	},
   methods: 
@@ -49,5 +50,9 @@
 	<p v-if="day_n === 5">Пятница</p>
 	<p v-if="day_n === 6">Суббота</p>
 	<p v-if="day_n === 7">Воскресенье</p>
+
+  <p v-if="age < 18">Несовершеннолетний</p>
+	<p v-else-if="age < 25">Молодой человек</p>
+	<p v-else>Старше</p>
 </template>
   
