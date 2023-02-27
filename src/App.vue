@@ -28,19 +28,16 @@
     items: [1, 2, 3, -4, 5],
     products: [
 			{
+				id: 1,
 				name: 'Гречка',
-				price: 100,
-				quantity: 5
 			},
 			{
+				id: 2,
 				name: 'Кофе',
-				price: 200,
-				quantity: 4
 			},
 			{
+				id: 3,
 				name: 'Сахар',
-				price: 300,
-				quantity: 3
 			},]
 		}
 	},
@@ -82,12 +79,6 @@
 		<p>+++</p>
 		<p>+++</p>
 	</div>
-  <div v-for="elem in items">
-        <li>
-        {{ elem }}
-        </li>
-        <li class="divider">divider</li>
-    </div>
     <div>
         <table>
             <tr v-for="things in products">
@@ -97,10 +88,10 @@
             </tr>
         </table>
     </div>
-    <p v-for="num in items">
-      <p v-if = "num> 0">
-		    {{ num }}
-	    </p>
-	</p>
+    <ul>
+            <li v-for="things in products" :key="things.id">
+                {{ things.name }}
+            </li>
+        </ul>
 </template>
   
