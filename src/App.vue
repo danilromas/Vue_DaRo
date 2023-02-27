@@ -27,6 +27,7 @@
     isAuth: true,
     items: [1, 2, 3, 4, 5],
     arr: ['x', 'y', 'z'],
+    obj: {user1: '500$', user2: '2100$', user3: '3300$'},
 		}
 	},
   methods: 
@@ -73,6 +74,9 @@
   <ul>
 	<li v-for="(elem, key) in arr">
 		 {{ key }} {{ elem }}</li>
-    </ul>
+    <li v-for="(elem1, key, index) in obj">
+		 {{ key }} - {{ elem1 }} - {{ index+1 }}
+    </li>
+  </ul>
 </template>
   
