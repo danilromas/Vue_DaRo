@@ -63,6 +63,7 @@
     <div class="withMargin"> 
         <button @click="hide"> {{ obj.hidden ? 'Показать' : 'Скрыть' }} </button>
         <p :class="obj">Текст.</p>
+        <p :class="{active: false, valid: true}">Текст.</p>
     </div>
   
 </template>
@@ -79,6 +80,13 @@ p.hidden {
 .withMargin {
     margin-left: 20px;
 }
+.active {
+	display: none;
+}
+.valid {
+    color: red;
+}
+
 </style>
 
   
