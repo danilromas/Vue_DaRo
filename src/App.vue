@@ -28,6 +28,7 @@
     items: [1, 2, 3, 4, 5],
     arr: ['x', 'y', 'z'],
     obj: {user1: '500$', user2: '2100$', user3: '3300$'},
+    items: [1, 2, 3],
 		}
 	},
   methods: 
@@ -68,15 +69,11 @@
 		<p>+++</p>
 		<p>+++</p>
 	</div>
-  <ul>
-	  <li v-for="elem in items">{{ elem**2 }}</li>
-  </ul>
-  <ul>
-	<li v-for="(elem, key) in arr">
-		 {{ key }} {{ elem }}</li>
-    <li v-for="(elem1, key, index) in obj">
-		 {{ key }} - {{ elem1 }} - {{ index+1 }}
-    </li>
-  </ul>
+  <div v-for="elem in items">
+        <li>
+        {{ elem }}
+        </li>
+        <li class="divider">divider</li>
+    </div>
 </template>
   
