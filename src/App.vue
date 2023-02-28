@@ -44,6 +44,9 @@
 
 <template>  
  <p :class="{isActive: active, hasError: valid}"> Текст какой-то </p>
+ 
+ <p :style="{color: 'green', backgroundColor: 'yellow'}">Текст</p>
+ <p :style="{fontStyle:'italic'}"> <b>Текст много текста</b> </p>
 </template>
 
 <style>
