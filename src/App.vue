@@ -30,10 +30,13 @@
     number: 0,
     num: 0,
 		res: 0,
+    value: "проверка",
+    value_but: "",
+    value_arr: "",
     methods: 
     {
-    calc: function() {
-		    this.res = this.num ** 2;},
+    split_value: function () {
+      this.value_array = this.value_button.split(" ")},
         computed: 
     {    }
       }
@@ -43,24 +46,14 @@
 </script>
 
 <template>  
- <p :class="{isActive: active, hasError: valid}"> Текст какой-то </p>
-
- <input type="text" v-model="message" class="my-input">
-    <div>
-        <p :style="{textTransform:'uppercase'}">{{ message }}</p>    
-
-    </div>
-
-
-    <div class="withMargin">
-
-        <input type="number" v-model="number" class="my-input">
-
-        <p :style="{textTransform:'uppercase'}">{{ number**2 }}</p> 
-      </div>
-  <p>{{ res }}</p>
-	<input v-model="num">
-	<button v-on:click="calc">work</button>
+ <valuearea v-model="value"></valuearea>
+ <p>{{ value }}</p>
+ <valuearea v-model="value_but"></valuearea>
+ <ul v-for="elem in value_arr">
+    <li :key="key">
+      {{ elem }}
+    </li>
+  </ul>
 </template>
 
 <style>
