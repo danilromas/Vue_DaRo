@@ -24,6 +24,8 @@
     Admin: true,
     day_n: 4,
     age: 25,
+    active: false,
+		valid: true,
     arr: ['1', '2', '3'],
     obj: {
 			red_color: true,
@@ -32,24 +34,6 @@
 		},
     methods: 
     {
-        add: function() {
-		this.arr.push(this.arr.length); // добавить элемент
-        },
-        removeb: function(){
-        this.arr.shift(0) // убрать первый
-        },
-        removef: function(){
-        this.arr.splice(this.arr.length-1) //убрать последний
-        },
-        removel: function(){
-        this.arr.splice(this.arr.length-2, 1) //убрать предпоследний
-        },
-        sort1: function(){
-        this.arr.sort() //отсортировать
-        },
-        reverse1: function(){
-        this.arr.reverse() //отсортировать
-        },
         computed: 
     {    }
       }
@@ -59,13 +43,7 @@
 </script>
 
 <template>  
-    <p class="cssClasses"> cssClasses </p>
-    <div class="withMargin"> 
-        <button @click="hide"> {{ obj.hidden ? 'Показать' : 'Скрыть' }} </button>
-        <p :class="obj">Текст.</p>
-        <p :class="{active: false, valid: true}">Текст.</p>
-    </div>
-  
+ <p :class="{isActive: active, hasError: valid}"> Текст какой-то </p>
 </template>
 
 <style>
@@ -87,6 +65,12 @@ p.hidden {
     color: red;
 }
 
+.isActive {
+	display: none;
+}
+.hasError {
+    color: red;
+}
 </style>
 
   
