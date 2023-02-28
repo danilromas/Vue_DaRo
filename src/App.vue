@@ -62,7 +62,31 @@
       years: yearsArray,
       newItem: '',
 		  items: ['a', 'b', 'c', 'd', 'e'],
-      myList: ['item1', 'item2', 'item3'],  
+      users: [
+			{
+				id: 1,
+				name: 'Максим Данющис',
+				salary: 100,
+				age: 20,
+                isEdit: false,
+			},
+			{
+				id: 2,
+				name: 'Давид Авагян',
+				salary: 200,
+				age: 40,
+                isEdit: false,
+			},
+			{
+				id: 3,
+				name: 'Эдем Османов',
+				salary: 300,
+				age: 50,
+                isEdit: false,
+			},
+		],
+	}
+},
       methods: 
     {
       addItem: function() {
@@ -70,15 +94,11 @@
 	},
 	addItemToBegin: function() {
 		this.items.unshift(this.newItem);
-	},
-      this.items.unshift(this.newItem);}
-    },
-    removeItem(index) {
-      this.myList.splice(index, 1)
-    }
+	}
         }
-      }
-      
+        }
+
+
 </script>
 
 <template>  
@@ -105,13 +125,28 @@
 			{{ item }}
 		</li>
 	</ul>
-  <div class="withMargin">
-        <ul>
-        <li v-for="(item1, index) in myList" :key="index" @click="removeItem(index)">
-            {{ item1 }}
-        </li>
-        </ul>
-    </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Age</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="user in users" :key="user.id">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.salary }}</td>
+          <td>{{ user.age }}</td>
+          <td><button @click="removeUser(user.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <style>
