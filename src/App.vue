@@ -148,6 +148,10 @@
       </tbody>
     </table>
   </div>
+  <div class="withMargin">
+        <p>тут ничего делать не нужно было :/ </p>
+
+    </div>
 </template>
 
 <style>
