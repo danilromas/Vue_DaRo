@@ -34,6 +34,7 @@
     value_but: "",
     value_arr: "",
     checked: true,
+    arr: [],
     methods: 
     {
     split_value: function () {
@@ -47,59 +48,19 @@
 </script>
 
 <template>  
- <valuearea v-model="value"></valuearea>
- <p>{{ value }}</p>
- <valuearea v-model="value_but"></valuearea>
- <ul v-for="elem in value_arr">
-    <li :key="key">
-      {{ elem }}
-    </li>
-  </ul>
-  <input type="checkbox" v-model="checked">
-	    <p v-if="checked">Плотнкая всем моим друзьям </p>
-      <p>{{ checked ? ' yes' : ' no' }}</p>
+ <p>Выберите язык ваш</p>
+  <input type="checkbox" v-model="arr" value="russian"> Русский
+	<input type="checkbox" v-model="arr" value="english"> Английский
+	<input type="checkbox" v-model="arr" value="german"> Немецкий
+
+    <ul>
+        <li v-for="items in arr"> {{ items }} </li>
+
+    </ul>
 </template>
 
 <style>
-.cssClasses{
-  font-size: 30px;
-  margin-left: 5%;
 
-}
-p.hidden {
-	display: none;
-}
-.withMargin {
-    margin-left: 20px;
-}
-.active {
-	display: none;
-}
-.valid {
-    color: red;
-}
-
-.isActive {
-	display: none;
-}
-.hasError {
-    color: red;
-}
-.my-input {
-    border: none;
-    border-radius: 3px;
-    padding: 1rem;
-    font-size: 1.2rem;
-    background-color: whitesmoke;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-  }
-
-  .my-input:focus {
-    outline: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  } 
 </style>
 
   
