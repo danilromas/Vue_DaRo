@@ -28,8 +28,12 @@
 		valid: true,
     message: 'проверка',
     number: 0,
+    num: 0,
+		res: 0,
     methods: 
     {
+    calc: function() {
+		    this.res = this.num ** 2;},
         computed: 
     {    }
       }
@@ -54,6 +58,9 @@
 
         <p :style="{textTransform:'uppercase'}">{{ number**2 }}</p> 
       </div>
+  <p>{{ res }}</p>
+	<input v-model="num">
+	<button v-on:click="calc">work</button>
 </template>
 
 <style>
