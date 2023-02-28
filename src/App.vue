@@ -94,7 +94,10 @@
 	}
         }
 
-        import User from './components/User.vue'
+        import Rabotnik from './components/User.vue'
+        components: {
+              uchenik
+           }
 </script>
 
 <template>  
@@ -152,6 +155,7 @@
         <p>тут ничего делать не нужно было :/ </p>
 
     </div>
+    <Uchenik name="Давид" surn="Авагян" age="20"/>
 </template>
 
 <style>

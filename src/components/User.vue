@@ -1,13 +1,17 @@
 <template>
-	{{ name }}
-</template>
-
-<script>
-	export default {
-		data() {
-			return {
-				name: 'Джон'
-			}
-		}
-	}
-</script>
+	<p>{{ name }}</p>
+	<p>{{ surn }}</p>
+	<p>{{ age }}</p>
+ </template>
+ 
+ 
+ 
+ <script>
+ export default {
+	 props: ['name', 'surn', 'age'],
+	 data() {
+		 return {
+		 }
+	 }
+ }
+ </script>
