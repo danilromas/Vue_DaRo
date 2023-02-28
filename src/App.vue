@@ -58,10 +58,17 @@
         "Ноябрь",
         "Декабрь",
       ],
+      isDisabled: false,
       years: yearsArray,
+      methods: 
+    {
+        disabel: function (){
+            this.isDisabled = !this.isDisabled
+        }
+    }
+}
     }
   }
-}
 
 </script>
 
@@ -81,6 +88,8 @@
       <option v-for="year in years">{{ year }}</option>
     </select>
     </div>
+    <input type="checkbox" v-model="isDisabled">
+    <input v-bind:disabled="isDisabled" type="text">
 </template>
 
 <style>
