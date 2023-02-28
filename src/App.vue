@@ -33,6 +33,7 @@
     value: "проверка",
     value_but: "",
     value_arr: "",
+    checked: true,
     methods: 
     {
     split_value: function () {
@@ -54,6 +55,9 @@
       {{ elem }}
     </li>
   </ul>
+  <input type="checkbox" v-model="checked">
+	    <p v-if="checked">Плотнкая всем моим друзьям </p>
+      <p>{{ checked ? ' yes' : ' no' }}</p>
 </template>
 
 <style>
