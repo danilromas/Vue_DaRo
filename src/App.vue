@@ -60,31 +60,20 @@
       ],
       isDisabled: false,
       years: yearsArray,
-      message: '',
-        actualmessage: '',
-        text: '',
-        text1: '',
+      newItem: '',
+		  items: ['a', 'b', 'c', 'd', 'e'],
       methods: 
     {
-      submit: function(){
-            this.actualmessage = this.message
-        },
-        show: function(){
-            this.text = 'ALT key is pressed!'
-        },
-        displayText(button) {
-        if (button === 'left') {
-            this.text1 = 'left'} 
-            else if (button === 'right') {
-            this.text1 = 'right'} 
-            else if (button === 'middle') {
-            this.text1 = 'middle'
+      addItem: function() {
+		this.items.push(this.newItem);
+	},
+	addItemToBegin: function() {
+		this.items.unshift(this.newItem);
+	}
         }
         }
     }
 }
-    }
-  }
 
 </script>
 
@@ -104,15 +93,14 @@
       <option v-for="year in years">{{ year }}</option>
     </select>
     </div>
-    <input type="checkbox" v-model="isDisabled">
-    <input v-bind:disabled="isDisabled" type="text">
-    <input v-model="message" @keyup.enter="submit"/>
-        <p> {{ actualmessage  }}</p>
-
-        <a href="#" @click.alt="show" > ссылка </a>
-        <p>{{ text }}</p>
-        <a href="#" @click.left="displayText('left')" @click.right="displayText('right')" @click.middle="displayText('middle')">Click</a>
-        <p>{{ text1 }}</p>
+  <input v-model="newItem">
+	<button @click="addItem" >добавить в начало</button>
+	<button @click="addItemToBegin" >добавить в конец</button>
+  <ul>
+		<li v-for="(item, index) in items" :key="index">
+			{{ item }}
+		</li>
+	</ul>
 </template>
 
 <style>
