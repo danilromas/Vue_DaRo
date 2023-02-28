@@ -44,6 +44,7 @@
       selectedMonth: today.getMonth(),
       selectedYear: today.getFullYear(),
       days: daysArray,
+      props: ['name'],
       months: [
         "Январь",
         "Февраль",
@@ -94,7 +95,7 @@
 	}
         }
 
-        import Rabotnik from './components/User.vue'
+        import uchenik from './components/User.vue'
         components: {
               uchenik
            }
@@ -155,7 +156,10 @@
         <p>тут ничего делать не нужно было :/ </p>
 
     </div>
-    <Uchenik name="Давид" surn="Авагян" age="20"/>
+    <uchenik name="Давид" surn="Авагян" age="20"/>
+<ul>
+<li v-for="names in name">{{ names }}</li>
+</ul>
 </template>
 
 <style>
