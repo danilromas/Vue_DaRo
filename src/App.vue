@@ -26,12 +26,8 @@
     age: 25,
     active: false,
 		valid: true,
-    arr: ['1', '2', '3'],
-    obj: {
-			red_color: true,
-			font_big_size:  true,
-      hidden: false,
-		},
+    message: 'проверка',
+    number: 0,
     methods: 
     {
         computed: 
@@ -44,9 +40,20 @@
 
 <template>  
  <p :class="{isActive: active, hasError: valid}"> Текст какой-то </p>
- 
- <p :style="{color: 'green', backgroundColor: 'yellow'}">Текст</p>
- <p :style="{fontStyle:'italic'}"> <b>Текст много текста</b> </p>
+
+ <input type="text" v-model="message" class="my-input">
+    <div>
+        <p :style="{textTransform:'uppercase'}">{{ message }}</p>    
+
+    </div>
+
+
+    <div class="withMargin">
+
+        <input type="number" v-model="number" class="my-input">
+
+        <p :style="{textTransform:'uppercase'}">{{ number**2 }}</p> 
+      </div>
 </template>
 
 <style>
@@ -74,6 +81,21 @@ p.hidden {
 .hasError {
     color: red;
 }
+.my-input {
+    border: none;
+    border-radius: 3px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: whitesmoke;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .my-input:focus {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  } 
 </style>
 
   
