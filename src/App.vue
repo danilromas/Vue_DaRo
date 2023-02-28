@@ -65,37 +65,33 @@
       users: [
 			{
 				id: 1,
-				name: 'Максим Данющис',
-				salary: 100,
-				age: 20,
-                isEdit: false,
+				name: 'name1',
+				surn: 'surn1',
+				isEdit: false,
 			},
 			{
 				id: 2,
-				name: 'Давид Авагян',
-				salary: 200,
-				age: 40,
-                isEdit: false,
+				name: 'name2',
+				surn: 'surn2',
+				isEdit: false,
 			},
 			{
 				id: 3,
-				name: 'Эдем Османов',
-				salary: 300,
-				age: 50,
-                isEdit: false,
+				name: 'name3',
+				surn: 'surn3',
+				isEdit: false,
 			},
 		],
 	}
 },
       methods: 
-    {
-      addItem: function() {
-		this.items.push(this.newItem);
+    {edit(user) {
+		user.isEdit = true;
 	},
-	addItemToBegin: function() {
-		this.items.unshift(this.newItem);
+	    save(user) {
+		user.isEdit = false;
+	},
 	}
-        }
         }
 
 
@@ -130,19 +126,24 @@
       <thead>
         <tr>
           <th>ID</th>
-          <th>Name</th>
-          <th>Salary</th>
-          <th>Age</th>
-          <th>Actions</th>
+          <th>Name</th> 
+          <th>Surname</th> 
         </tr>
       </thead>
       <tbody>
         <tr v-for="user in users" :key="user.id">
+          <template v-if="!user.isEdit">
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
-          <td>{{ user.salary }}</td>
-          <td>{{ user.age }}</td>
-          <td><button @click="removeUser(user.id)">Delete</button></td>
+          <td>{{ user.surn }}</td>
+          <button @click="edit(user)"> редактировать</button>
+        </template>
+        <template v-else>
+                <td>{{ user.id }}</td>
+				<td> <input v-model="user.name"> </td>
+				<td>  <input v-model="user.surn"> </td>
+                <td>  <button @click="save(user)">сохранить</button></td>
+			</template>
         </tr>
       </tbody>
     </table>
