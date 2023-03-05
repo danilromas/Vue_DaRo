@@ -72,18 +72,21 @@
 				name: 'name1',
 				surn: 'surn1',
 				isEdit: false,
+        age: 10,
 			},
 			{
 				id: 2,
 				name: 'name2',
 				surn: 'surn2',
 				isEdit: false,
+        age: 10,
 			},
 			{
 				id: 3,
 				name: 'name3',
 				surn: 'surn3',
 				isEdit: false,
+        age: 10,
 			},
 		],
 	}
@@ -155,7 +158,8 @@
       </tbody>
     </table>
   </div>
-  <p>{{ name }} {{ salary }} {{ age }}</p>
+  <Rabotnik v-for="user in users"
+    :id="user.id" :name="user.name" :salary="user.salary" :age="user.age" :key="user.id"/>
 </template>
 
 <style>
