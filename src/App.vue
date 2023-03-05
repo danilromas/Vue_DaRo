@@ -92,14 +92,15 @@
 	}
 },
 methods: {
-  one: function () {
-      document.write('Сообщение 1')
-    },
-    two: function () {
-      document.write('Сообщение 2')
+  methods: {
+    remove(id) {
+      this.users = this.users.filter((user) => {
+        return user.id !== id;
+      })
     }
   }
-}
+    }
+  }
 
         import uchenik from './components/User.vue'
         components: {
