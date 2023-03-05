@@ -92,14 +92,10 @@
 	}
 },
   methods: {
-    change(id, name, surn){
-      this.users = this.users.map((user) => {
-        if(user.id === id){
-          user.name = name;
-          user.surn = surn;
-        }
-        return user;
-      });
+    add(name, surn) {
+      let id = this.users.length + 1;
+      this.users.push({id, name, surn});
+      console.log(this.users)
     }
   }
 }
