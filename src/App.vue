@@ -91,15 +91,15 @@
 		],
 	}
 },
-      methods: 
-    {edit(user) {
-		user.isEdit = true;
-	},
-	    save(user) {
-		user.isEdit = false;
-	},
-	}
-        }
+methods: {
+    Name(name) {
+        console.log(name);
+    },
+    Salary(salary){
+        console.log(salary);
+    }
+  }
+}
 
         import uchenik from './components/User.vue'
         components: {
@@ -160,6 +160,7 @@
   </div>
   <Rabotnik v-for="user in users"
     :id="user.id" :name="user.name" :salary="user.salary" :age="user.age" :key="user.id"/>
+    <Rabotnik @show="Name" @show1="Salary"/>
 </template>
 
 <style>
