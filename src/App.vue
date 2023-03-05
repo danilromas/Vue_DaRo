@@ -1,12 +1,17 @@
 <script>
   export default{
     name:'App',
+    props: ['name', 'salary', 'age'],
 	data() {
     const today = new Date();
     const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
     const daysArray = Array.from({ length: daysInMonth }, (_, i) => i + 1);
     const yearsArray = Array.from({ length: 100 }, (_, i) => today.getFullYear() - i);
+    
 		return {
+    name: 'Давид Авагян',
+    salary: '5$',
+    age: '20',
 		name: 'Danil',
 		group: 'I-1-21',
     image: 'welcome.png',
@@ -27,7 +32,6 @@
     visible3: false,
     Admin: true,
     day_n: 4,
-    age: 25,
     active: false,
 		valid: true,
     message: 'проверка',
@@ -152,14 +156,7 @@
       </tbody>
     </table>
   </div>
-  <div class="withMargin">
-        <p>тут ничего делать не нужно было :/ </p>
-
-    </div>
-    <uchenik name="Давид" surn="Авагян" age="20"/>
-<ul>
-<li v-for="names in name">{{ names }}</li>
-</ul>
+  <p>{{ name }} {{ salary }} {{ age }}</p>
 </template>
 
 <style>
