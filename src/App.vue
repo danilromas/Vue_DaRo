@@ -9,10 +9,9 @@
     const yearsArray = Array.from({ length: 100 }, (_, i) => today.getFullYear() - i);
     
 		return {
-    name: 'Давид Авагян',
-    salary: '5$',
-    age: '20',
-		name: 'Danil',
+    name: String,
+		salary: String,
+		age: Number,
 		group: 'I-1-21',
     image: 'welcome.png',
     text1: 'page',
